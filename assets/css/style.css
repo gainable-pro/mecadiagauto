@@ -48,16 +48,22 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background-color: var(--bg-primary);
+  background-color: #050608;
   color: var(--text-white);
 }
 
 body {
   font-family: var(--font-body);
-  background-color: var(--bg-primary);
+  background-color: transparent !important;
   color: var(--text-white);
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
+}
+
+main, header, footer {
+  position: relative;
+  z-index: 2;
 }
 
 a {
@@ -1058,7 +1064,7 @@ a {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -2;
+  z-index: 0;
   pointer-events: none;
   overflow: hidden;
 }
@@ -1072,9 +1078,9 @@ a {
   background-size: cover;
   background-position: center center;
   opacity: 0;
-  transform: scale(1.08);
-  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: brightness(0.65) contrast(1.15);
+  transform: scale(1.04);
+  transition: opacity 1.0s cubic-bezier(0.16, 1, 0.3, 1), transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: brightness(0.95) contrast(1.15);
 }
 
 .dynamic-bg-slide.active {
@@ -1082,7 +1088,7 @@ a {
   transform: scale(1.0);
 }
 
-/* Dark cinematic vignette overlays to ensure perfect content legibility */
+/* Semi-transparent Dark Vignette: keeps car details clearly visible while guaranteeing text readability */
 .dynamic-bg-stage::after {
   content: '';
   position: absolute;
@@ -1091,8 +1097,8 @@ a {
   right: 0;
   bottom: 0;
   background: 
-    linear-gradient(180deg, rgba(5, 6, 8, 0.82) 0%, rgba(5, 6, 8, 0.88) 40%, rgba(5, 6, 8, 0.94) 80%, #050608 100%),
-    radial-gradient(circle at 65% 35%, rgba(225, 29, 72, 0.08) 0%, transparent 60%);
+    linear-gradient(180deg, rgba(5, 6, 8, 0.45) 0%, rgba(5, 6, 8, 0.65) 50%, rgba(5, 6, 8, 0.85) 100%),
+    radial-gradient(circle at 65% 35%, rgba(225, 29, 72, 0.05) 0%, transparent 60%);
   pointer-events: none;
 }
 
