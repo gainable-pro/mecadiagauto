@@ -1,0 +1,17 @@
+{
+  "name": "mecadiagauto",
+  "version": "2.0.0",
+  "description": "Site vitrine haute performance pour Mecadiag Auto - Reprogrammation moteur, Bio-éthanol E85 et électronique à Miramas (13)",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "reprogrammation-moteur",
+    "miramas",
+    "ethanol-e85",
+    "calculateur",
+    "adblue"
+  ],
+  "author": "MECADIAG AUTO",
+  "license": "ISC"
+}
