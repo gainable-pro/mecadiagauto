@@ -227,3 +227,4 @@ class CarPerformanceCockpit {
 document.addEventListener('DOMContentLoaded', () => {
   new CarPerformanceCockpit();
 });
+

@@ -7,3 +7,4 @@ Mecadiagauto est une application / plateforme dédiée à l'aide au diagnostic d
 
 ## Démarrage
 *(À configurer selon la stack technique choisie)*
+

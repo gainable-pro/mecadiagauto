@@ -322,3 +322,4 @@ class DynoSimulator {
 document.addEventListener('DOMContentLoaded', () => {
   new DynoSimulator();
 });
+
