@@ -179,14 +179,28 @@
       </p>
     </div>
 
+    <!-- Filtres par catégorie de véhicules -->
+    <div class="cfg-category-filter">
+      <button class="cfg-cat-btn active" data-category="all">Tous les véhicules</button>
+      <button class="cfg-cat-btn" data-category="sport">🏎️ Berlines &amp; Sportives</button>
+      <button class="cfg-cat-btn" data-category="utilitaire">🚐 Fourgons &amp; Utilitaires Pro</button>
+    </div>
+
     <!-- Sélecteur de marques (Style Shiftech) -->
     <div class="shiftech-brands-bar">
       <button class="shiftech-brand-btn active" data-brand="audi">Audi</button>
       <button class="shiftech-brand-btn" data-brand="bmw">BMW</button>
-      <button class="shiftech-brand-btn" data-brand="mercedes">Mercedes-AMG</button>
+      <button class="shiftech-brand-btn" data-brand="mercedes">Mercedes-Benz</button>
       <button class="shiftech-brand-btn" data-brand="volkswagen">Volkswagen</button>
+      <button class="shiftech-brand-btn" data-brand="renault">Renault &amp; Pro</button>
+      <button class="shiftech-brand-btn" data-brand="peugeot">Peugeot &amp; Pro</button>
+      <button class="shiftech-brand-btn" data-brand="citroen">Citroën &amp; Pro</button>
+      <button class="shiftech-brand-btn" data-brand="ford">Ford &amp; Pro</button>
+      <button class="shiftech-brand-btn" data-brand="iveco">Iveco (Daily)</button>
+      <button class="shiftech-brand-btn" data-brand="fiat">Fiat Pro</button>
       <button class="shiftech-brand-btn" data-brand="porsche">Porsche</button>
-      <button class="shiftech-brand-btn" data-brand="renault">Renault Sport</button>
+      <button class="shiftech-brand-btn" data-brand="toyota">Toyota &amp; Pro</button>
+      <button class="shiftech-brand-btn" data-brand="seat_cupra">Cupra / Seat</button>
     </div>
 
     <!-- Panneau central du configurateur -->
@@ -301,6 +315,40 @@
               <small style="color:var(--text-silver); font-size:0.72rem;">Remise à l'origine offerte</small>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Avertissement Technique & Conditions Réelles de la Simulation -->
+      <div class="simulator-disclaimer-box">
+        <div class="disclaimer-header">
+          <span class="disclaimer-icon">⚠️</span>
+          <span>Avertissement Technique &amp; Nature de la Simulation</span>
+        </div>
+        <p class="disclaimer-intro">
+          Les valeurs de puissance (<strong>Ch</strong>) et de couple (<strong>Nm</strong>) affichées sont calculées à titre de <strong>simulation et de moyennes indicatives</strong> constatées lors des étalonnages sur notre banc d'essai synchronisé 4x4 à Miramas. Le gain effectif sur votre moteur dépend directement de l'ensemble de ses paramètres mécaniques réels.
+        </p>
+
+        <div class="disclaimer-params-grid">
+          <div class="disclaimer-param-item">
+            <span class="bullet-red">▸</span>
+            <div><strong>État mécanique &amp; kilométrage :</strong> Compression des cylindres, état d'usure du turbocompresseur, encrassement des injecteurs, de l'admission et de l'échangeur.</div>
+          </div>
+          <div class="disclaimer-param-item">
+            <span class="bullet-red">▸</span>
+            <div><strong>Tolérance constructeur sortie usine :</strong> Deux moteurs rigoureusement identiques affichent fréquemment un écart naturel de ± 5% par rapport aux chiffres annoncés.</div>
+          </div>
+          <div class="disclaimer-param-item">
+            <span class="bullet-red">▸</span>
+            <div><strong>Qualité du carburant injecté :</strong> Indice d'octane réel (SP98 pétrolier vs SP95-E10), teneur saisonnière en éthanol pur (E85 été 85% vs E85 hiver 65%), indice de cétane pour diesel.</div>
+          </div>
+          <div class="disclaimer-param-item">
+            <span class="bullet-red">▸</span>
+            <div><strong>Conditions atmosphériques du jour :</strong> Température ambiante en cellule d'essai, pression barométrique et taux d'humidité (norme de correction officielle DIN / EWG).</div>
+          </div>
+        </div>
+
+        <div class="disclaimer-commitment">
+          💡 <strong>Notre engagement professionnel :</strong> Chez <em>MECADIAG AUTO</em>, <strong>aucun fichier générique n'est injecté à l'aveugle</strong>. Chaque véhicule fait l'objet d'un <strong>diagnostic électronique approfondi</strong> et d'un <strong>passage préalable sur banc d'essai</strong> afin de vérifier la santé mécanique de votre bloc avant d'adapter la cartographie sur mesure en toute sécurité.
         </div>
       </div>
     </div>
