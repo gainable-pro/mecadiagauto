@@ -1046,3 +1046,122 @@ a {
   .options-grid-shiftech { grid-template-columns: 1fr; }
   .footer-container-shiftech { grid-template-columns: 1fr; }
 }
+
+
+/* ==========================================================================
+   DYNAMIC SCROLL-LINKED CAR BACKGROUND (MERCEDES-AMG, BMW M, PORSCHE, MUSTANG)
+   ========================================================================== */
+
+.dynamic-bg-stage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.dynamic-bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: brightness(0.65) contrast(1.15);
+}
+
+.dynamic-bg-slide.active {
+  opacity: 1;
+  transform: scale(1.0);
+}
+
+/* Dark cinematic vignette overlays to ensure perfect content legibility */
+.dynamic-bg-stage::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(180deg, rgba(5, 6, 8, 0.82) 0%, rgba(5, 6, 8, 0.88) 40%, rgba(5, 6, 8, 0.94) 80%, #050608 100%),
+    radial-gradient(circle at 65% 35%, rgba(225, 29, 72, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Floating indicator in bottom-left for currently highlighted car */
+.car-scene-pill {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid var(--border-silver);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-tech);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-silver-light);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 99;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  transition: opacity 0.4s ease;
+}
+
+.car-scene-pill .pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red-racing);
+  box-shadow: 0 0 8px var(--red-racing);
+}
+
+.car-scene-pill strong {
+  color: #ffffff;
+}
+
+/* Make section backgrounds translucent so the dynamic car shows through */
+.hero-shiftech {
+  background: transparent !important;
+}
+
+.section-padding {
+  position: relative;
+  z-index: 1;
+}
+
+.shiftech-config-panel, .banc-facility-banner, .e85-calc-shiftech, .radar-shiftech-box {
+  background: rgba(10, 12, 16, 0.9) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* Continuous Cinematic Motion (Ken Burns Pan & Drift) */
+@keyframes cinematicDrift {
+  0% {
+    transform: scale(1.02) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate(-1.5%, -1%);
+  }
+  100% {
+    transform: scale(1.03) translate(1%, -0.5%);
+  }
+}
+
+.dynamic-bg-slide.active {
+  opacity: 1 !important;
+  animation: cinematicDrift 24s infinite ease-in-out alternate !important;
+}

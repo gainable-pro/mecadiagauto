@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
+  initDynamicCarBackground();
   initQuickSearchBar();
   initE85Calculator();
   initRadarPins();
@@ -152,3 +153,74 @@ function initSmoothScroll() {
     });
   });
 }
+
+/* Dynamic Scroll-Linked Car Background (Mercedes-AMG, BMW M, Porsche, Mustang) */
+function initDynamicCarBackground() {
+  const slides = {
+    mercedes: document.getElementById('slide-mercedes'),
+    bmw: document.getElementById('slide-bmw'),
+    porsche: document.getElementById('slide-porsche'),
+    mustang: document.getElementById('slide-mustang')
+  };
+
+  const nameEl = document.getElementById('car-scene-name');
+  if (!slides.mercedes || !nameEl) return;
+
+  const carData = {
+    mercedes: { label: 'MERCEDES CLASSE AMG', el: slides.mercedes },
+    bmw: { label: 'BMW PACK M COMPETITION', el: slides.bmw },
+    porsche: { label: 'PORSCHE 911 GT3', el: slides.porsche },
+    mustang: { label: 'FORD MUSTANG GT 5.0 V8', el: slides.mustang }
+  };
+
+  let currentCar = 'mercedes';
+
+  function switchCar(key) {
+    if (key === currentCar || !carData[key]) return;
+    currentCar = key;
+
+    Object.keys(carData).forEach(k => {
+      if (k === key) {
+        carData[k].el.classList.add('active');
+      } else {
+        carData[k].el.classList.remove('active');
+      }
+    });
+
+    if (nameEl) {
+      nameEl.style.opacity = '0';
+      setTimeout(() => {
+        nameEl.textContent = carData[key].label;
+        nameEl.style.opacity = '1';
+      }, 200);
+    }
+  }
+
+  // Scroll listener to smoothly change car as user progresses down the page
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = Math.min(1, Math.max(0, scrollY / (docHeight || 1)));
+
+    if (progress < 0.22) {
+      switchCar('mercedes');
+    } else if (progress < 0.50) {
+      switchCar('bmw');
+    } else if (progress < 0.76) {
+      switchCar('porsche');
+    } else {
+      switchCar('mustang');
+    }
+  }, { passive: true });
+
+  // Subtle Mouse Parallax Depth
+  const stage = document.getElementById('dynamic-bg-stage');
+  if (stage) {
+    window.addEventListener('mousemove', (e) => {
+      const moveX = (e.clientX / window.innerWidth - 0.5) * 16;
+      const moveY = (e.clientY / window.innerHeight - 0.5) * 12;
+      stage.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    }, { passive: true });
+  }
+}
+
