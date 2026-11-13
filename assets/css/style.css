@@ -72,21 +72,23 @@ a {
 }
 
 /* ==========================================================================
-   TOP BAR (SHIFTECH STYLE)
+   TOP BAR (SHIFTECH STYLE - FINE HORIZONTALE)
    ========================================================================== */
 
 .topbar-shiftech {
   background: #000000;
-  border-bottom: 1px solid var(--border-light);
-  padding: 8px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 7px 24px;
   font-size: 0.82rem;
   font-family: var(--font-tech);
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: var(--text-silver);
+  position: relative;
+  z-index: 1002;
 }
 
 .topbar-shiftech .location-tag {
@@ -94,6 +96,7 @@ a {
   display: flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
 }
 
 .topbar-shiftech .location-tag .dot {
@@ -102,15 +105,47 @@ a {
   border-radius: 50%;
   background: var(--red-racing);
   box-shadow: 0 0 8px var(--red-racing);
+  flex-shrink: 0;
+}
+
+.location-full {
+  display: inline;
+}
+
+.location-short {
+  display: none;
 }
 
 .topbar-shiftech .contact-fast {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
 }
 
-.topbar-shiftech a:hover {
-  color: var(--red-racing);
+.topbar-phone-highlight {
+  color: #ffffff !important;
+  font-family: var(--font-tech);
+  font-weight: 800;
+  font-size: 0.84rem;
+  letter-spacing: 1.2px;
+  background: rgba(225, 29, 72, 0.16);
+  border: 1px solid var(--red-racing);
+  padding: 4px 14px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap !important;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-fast);
+}
+
+.topbar-phone-highlight:hover {
+  background: var(--red-racing);
+  color: #ffffff !important;
+  box-shadow: 0 0 14px var(--red-racing-glow);
+  transform: translateY(-1px);
 }
 
 /* ==========================================================================
@@ -1130,13 +1165,7 @@ a {
 
 /* Floating Actions */
 .floating-cta-container {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 999;
+  display: none !important;
 }
 
 .float-btn {
@@ -1330,9 +1359,39 @@ a {
   }
 
   /* Header & Navigation */
-  .nav-links, .nav-actions .btn-devis-red-red { display: none; }
+  .nav-links, .nav-actions { display: none !important; }
   .mobile-menu-toggle { display: block; }
-  .topbar-shiftech { font-size: 0.72rem; padding: 6px 12px; }
+
+  .topbar-shiftech {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap !important;
+  }
+
+  .topbar-shiftech .location-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap !important;
+  }
+
+  .location-full { display: none !important; }
+  .location-short { display: inline !important; }
+
+  .topbar-shiftech .topbar-phone-highlight {
+    padding: 3px 9px;
+    font-size: 0.76rem;
+    letter-spacing: 0.6px;
+    white-space: nowrap !important;
+    flex-shrink: 0;
+  }
+
+  .floating-cta-container {
+    display: none !important;
+  }
 
   /* Hero & Search Encadrement */
   .hero-shiftech { padding-top: 50px; padding-bottom: 40px; }

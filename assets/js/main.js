@@ -19,6 +19,18 @@ function initMobileNav() {
   const navLinks = document.querySelector('.nav-links');
 
   if (toggleBtn && navLinks) {
+    if (!navLinks.querySelector('.nav-mobile-action-call')) {
+      const callLi = document.createElement('li');
+      callLi.className = 'nav-mobile-action-call';
+      callLi.style.marginTop = '14px';
+      callLi.innerHTML = `
+        <a href="tel:0650624972" class="topbar-phone-highlight" style="display:flex; justify-content:center; padding: 10px 16px; font-size: 0.95rem; width: 100%; text-align: center;">
+          📞 Appeler l'Atelier : 06.50.62.49.72
+        </a>
+      `;
+      navLinks.appendChild(callLi);
+    }
+
     toggleBtn.addEventListener('click', () => {
       const isVisible = navLinks.style.display === 'flex';
       navLinks.style.display = isVisible ? 'none' : 'flex';
@@ -28,9 +40,10 @@ function initMobileNav() {
         navLinks.style.top = '100%';
         navLinks.style.left = '0';
         navLinks.style.width = '100%';
-        navLinks.style.background = '#000000';
-        navLinks.style.padding = '24px';
+        navLinks.style.background = '#050608';
+        navLinks.style.padding = '20px 24px';
         navLinks.style.borderBottom = '1px solid rgba(255,255,255,0.15)';
+        navLinks.style.boxShadow = '0 15px 35px rgba(0,0,0,0.9)';
       }
     });
   }
