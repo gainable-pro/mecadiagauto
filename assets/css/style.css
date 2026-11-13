@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    MECADIAG AUTO - SHIFTECH & MOTORSPORT ARCHITECTURE
    Couleurs : NOIR (#050608), ARGENT (#94a3b8, #cbd5e1), BLANC (#ffffff), ROUGE (#e11d48)
    ========================================================================== */
@@ -1056,6 +1056,7 @@ a {
 
 /* ==========================================================================
    DYNAMIC SCROLL-LINKED CAR BACKGROUND (MERCEDES-AMG, BMW M, PORSCHE, MUSTANG)
+   Ultra-smooth cinematic crossfade, zero-flicker z-index layering & Ken Burns
    ========================================================================== */
 
 .dynamic-bg-stage {
@@ -1067,6 +1068,7 @@ a {
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+  background-color: #050608;
 }
 
 .dynamic-bg-slide {
@@ -1077,15 +1079,42 @@ a {
   height: 100%;
   background-size: cover;
   background-position: center center;
+  background-repeat: no-repeat;
   opacity: 0;
-  transform: scale(1.04);
-  transition: opacity 1.0s cubic-bezier(0.16, 1, 0.3, 1), transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: brightness(0.95) contrast(1.15);
+  z-index: 1;
+  transition: opacity 2.0s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+  filter: brightness(0.92) contrast(1.15);
+  transform: scale(1.02);
+  animation: cinematicDrift 32s ease-in-out infinite alternate;
+  animation-play-state: running;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
+/* Incoming active car: transitions smoothly to 100% opacity on top layer */
 .dynamic-bg-slide.active {
   opacity: 1;
-  transform: scale(1.0);
+  z-index: 3;
+}
+
+/* Outgoing car: stays fully opaque underneath until incoming completes fade */
+.dynamic-bg-slide.fading-out {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Continuous Cinematic Motion (Ken Burns Pan & Drift) - runs continuously without reset */
+@keyframes cinematicDrift {
+  0% {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.06) translate3d(-1.2%, -0.8%, 0);
+  }
+  100% {
+    transform: scale(1.03) translate3d(0.8%, -0.4%, 0);
+  }
 }
 
 /* Semi-transparent Dark Vignette: keeps car details clearly visible while guaranteeing text readability */
@@ -1097,9 +1126,10 @@ a {
   right: 0;
   bottom: 0;
   background: 
-    linear-gradient(180deg, rgba(5, 6, 8, 0.45) 0%, rgba(5, 6, 8, 0.65) 50%, rgba(5, 6, 8, 0.85) 100%),
+    linear-gradient(180deg, rgba(5, 6, 8, 0.42) 0%, rgba(5, 6, 8, 0.62) 50%, rgba(5, 6, 8, 0.82) 100%),
     radial-gradient(circle at 65% 35%, rgba(225, 29, 72, 0.05) 0%, transparent 60%);
   pointer-events: none;
+  z-index: 10;
 }
 
 /* Floating indicator in bottom-left for currently highlighted car */
@@ -1107,7 +1137,7 @@ a {
   position: fixed;
   bottom: 24px;
   left: 24px;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.88);
   border: 1px solid var(--border-silver);
   padding: 8px 16px;
   border-radius: var(--radius-sm);
@@ -1121,8 +1151,9 @@ a {
   gap: 10px;
   z-index: 99;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-  transition: opacity 0.4s ease;
+  transition: opacity 0.5s ease;
 }
 
 .car-scene-pill .pill-dot {
@@ -1135,6 +1166,7 @@ a {
 
 .car-scene-pill strong {
   color: #ffffff;
+  transition: opacity 0.3s ease;
 }
 
 /* Make section backgrounds translucent so the dynamic car shows through */
@@ -1151,23 +1183,4 @@ a {
   background: rgba(10, 12, 16, 0.9) !important;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-}
-
-
-/* Continuous Cinematic Motion (Ken Burns Pan & Drift) */
-@keyframes cinematicDrift {
-  0% {
-    transform: scale(1.02) translate(0, 0);
-  }
-  50% {
-    transform: scale(1.08) translate(-1.5%, -1%);
-  }
-  100% {
-    transform: scale(1.03) translate(1%, -0.5%);
-  }
-}
-
-.dynamic-bg-slide.active {
-  opacity: 1 !important;
-  animation: cinematicDrift 24s infinite ease-in-out alternate !important;
 }

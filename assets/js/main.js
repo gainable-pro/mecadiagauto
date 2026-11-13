@@ -173,54 +173,121 @@ function initDynamicCarBackground() {
     mustang: { label: 'FORD MUSTANG GT 5.0 V8', el: slides.mustang }
   };
 
-  let currentCar = 'mercedes';
-
-  function switchCar(key) {
-    if (key === currentCar || !carData[key]) return;
-    currentCar = key;
-
-    Object.keys(carData).forEach(k => {
-      if (k === key) {
-        carData[k].el.classList.add('active');
-      } else {
-        carData[k].el.classList.remove('active');
+  // Preload all high-res vehicle imagery immediately for zero-lag transitions
+  Object.values(carData).forEach(item => {
+    if (item.el) {
+      const bgMatch = item.el.style.backgroundImage.match(/url\(['"]?(.*?)['"]?\)/);
+      if (bgMatch && bgMatch[1]) {
+        const preloadImg = new Image();
+        preloadImg.src = bgMatch[1];
       }
-    });
+    }
+  });
 
+  let currentKey = 'mercedes';
+  let zIndexCounter = 10;
+  let lastSwitchTimestamp = 0;
+  let fadeCleanTimeout = null;
+
+  function switchCar(targetKey) {
+    if (targetKey === currentKey || !carData[targetKey]) return;
+
+    const now = Date.now();
+    // Guard against rapid scroll jitter: minimum 600ms between scene updates
+    if (now - lastSwitchTimestamp < 600) return;
+    lastSwitchTimestamp = now;
+
+    const outgoing = carData[currentKey]?.el;
+    const incoming = carData[targetKey]?.el;
+    currentKey = targetKey;
+
+    zIndexCounter += 2;
+
+    if (incoming) {
+      // Put incoming car on top layer and fade it in over the previous car
+      incoming.style.zIndex = zIndexCounter;
+      incoming.classList.add('active');
+    }
+
+    if (outgoing && outgoing !== incoming) {
+      // Keep outgoing fully opaque on layer immediately beneath while incoming fades in
+      outgoing.style.zIndex = zIndexCounter - 1;
+      outgoing.classList.add('fading-out');
+
+      if (fadeCleanTimeout) clearTimeout(fadeCleanTimeout);
+      fadeCleanTimeout = setTimeout(() => {
+        outgoing.classList.remove('active');
+        outgoing.classList.remove('fading-out');
+        outgoing.style.zIndex = '1';
+      }, 2100);
+    }
+
+    // Ultra-soft fade for vehicle badge
     if (nameEl) {
       nameEl.style.opacity = '0';
       setTimeout(() => {
-        nameEl.textContent = carData[key].label;
+        nameEl.textContent = carData[targetKey].label;
         nameEl.style.opacity = '1';
-      }, 200);
+      }, 250);
     }
   }
 
-  // Scroll listener to smoothly change car as user progresses down the page
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = Math.min(1, Math.max(0, scrollY / (docHeight || 1)));
+  // Hysteresis threshold state machine: prevents bouncing back and forth on scroll boundaries
+  function getTargetCarKey(progress) {
+    if (currentKey === 'mercedes') {
+      if (progress >= 0.25) return 'bmw';
+      return 'mercedes';
+    }
+    if (currentKey === 'bmw') {
+      if (progress <= 0.16) return 'mercedes';
+      if (progress >= 0.52) return 'porsche';
+      return 'bmw';
+    }
+    if (currentKey === 'porsche') {
+      if (progress <= 0.44) return 'bmw';
+      if (progress >= 0.77) return 'mustang';
+      return 'porsche';
+    }
+    if (currentKey === 'mustang') {
+      if (progress <= 0.69) return 'porsche';
+      return 'mustang';
+    }
+    return 'mercedes';
+  }
 
-    if (progress < 0.22) {
-      switchCar('mercedes');
-    } else if (progress < 0.50) {
-      switchCar('bmw');
-    } else if (progress < 0.76) {
-      switchCar('porsche');
-    } else {
-      switchCar('mustang');
+  // Smooth scroll listener
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = Math.min(1, Math.max(0, scrollY / (docHeight || 1)));
+
+        const nextCar = getTargetCarKey(progress);
+        if (nextCar !== currentKey) {
+          switchCar(nextCar);
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
   }, { passive: true });
 
   // Subtle Mouse Parallax Depth
   const stage = document.getElementById('dynamic-bg-stage');
   if (stage) {
+    let mouseTicking = false;
     window.addEventListener('mousemove', (e) => {
-      const moveX = (e.clientX / window.innerWidth - 0.5) * 16;
-      const moveY = (e.clientY / window.innerHeight - 0.5) * 12;
-      stage.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      if (!mouseTicking) {
+        window.requestAnimationFrame(() => {
+          const moveX = (e.clientX / window.innerWidth - 0.5) * 16;
+          const moveY = (e.clientY / window.innerHeight - 0.5) * 12;
+          stage.style.transform = `translate3d(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px, 0)`;
+          mouseTicking = false;
+        });
+        mouseTicking = true;
+      }
     }, { passive: true });
   }
 }
-
