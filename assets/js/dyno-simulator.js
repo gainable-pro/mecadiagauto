@@ -1,7 +1,7 @@
 /**
  * MECADIAG AUTO - CONFIGURATEUR PERFORMANCE HAUTE PRÉCISION (STYLE SHIFTECH / OG PERFORMANCE)
- * Base de données exhaustive : Supercars, Berlines, Sportives ET Fourgons / Utilitaires Pro
- * Courbes dyno réalistes, calculs de couple/puissance et avertissement technique
+ * Base de données exhaustive : 15 Marques, 63 Modèles (Sportives, Berlines & Utilitaires Pro)
+ * Synchronisation bidirectionnelle avec la barre de recherche rapide (Hero Quick Search)
  */
 
 const PERFORMANCE_DATABASE = {
@@ -34,7 +34,7 @@ const PERFORMANCE_DATABASE = {
         "vmaxReprog": "305 km/h (débridée)"
       },
       "s3_8v": {
-        "name": "S3 2.0 TFSI 310ch",
+        "name": "S3 2.0 TFSI 310ch (8V / 8Y)",
         "image": "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80",
         "engine": "4-Cylindres 2.0L Turbo EA888",
         "type": "Compacte Sportive",
@@ -103,7 +103,7 @@ const PERFORMANCE_DATABASE = {
         "vmaxReprog": "235 km/h"
       },
       "a6_30tdi": {
-        "name": "A6 3.0 V6 TDI 272ch",
+        "name": "A6 / A7 3.0 V6 TDI 272ch / 286ch",
         "image": "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1000&q=80",
         "engine": "V6 3.0L Turbo Diesel",
         "type": "Grande Routière",
@@ -124,18 +124,41 @@ const PERFORMANCE_DATABASE = {
         "e85Price": "Non éligible (Diesel)",
         "vmaxOrig": "250 km/h",
         "vmaxReprog": "275 km/h"
+      },
+      "ttrs_8s": {
+        "name": "TT RS 2.5 TFSI 400ch (8S)",
+        "image": "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1000&q=80",
+        "engine": "5-Cylindres 2.5L Turbo",
+        "type": "Coupé Sportif Quattro",
+        "origHp": 400,
+        "origNm": 480,
+        "orig0100": "3.7s",
+        "st1Hp": 470,
+        "st1Nm": 600,
+        "st1_0100": "3.2s",
+        "st1Price": "690 €",
+        "st2Hp": 520,
+        "st2Nm": 660,
+        "st2_0100": "2.9s",
+        "st2Price": "Sur devis",
+        "e85Hp": 490,
+        "e85Nm": 625,
+        "e85_0100": "3.1s",
+        "e85Price": "890 €",
+        "vmaxOrig": "250 km/h",
+        "vmaxReprog": "300 km/h"
       }
     }
   },
   "bmw": {
     "brand": "BMW",
     "category": "sport",
-    "badge": "https://images.unsplash.com/photo-1555353540-64580b51c258?auto=format&fit=crop&w=800&q=80",
+    "badge": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80",
     "models": {
       "m4_g82": {
-        "name": "M3 / M4 Competition (G80/G82)",
+        "name": "M3 / M4 Competition (G80/G82) 510ch",
         "image": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1000&q=80",
-        "engine": "6-Cylindres en ligne 3.0L BiTurbo S58",
+        "engine": "6-Cylindres 3.0L BiTurbo S58",
         "type": "Coupé Motorsport",
         "origHp": 510,
         "origNm": 650,
@@ -156,9 +179,9 @@ const PERFORMANCE_DATABASE = {
         "vmaxReprog": "315 km/h (débridée)"
       },
       "m2_f87": {
-        "name": "M2 Competition (F87) S55",
+        "name": "M2 Competition (F87) S55 410ch",
         "image": "https://images.unsplash.com/photo-1555353540-64580b51c258?auto=format&fit=crop&w=1000&q=80",
-        "engine": "6-Cylindres en ligne 3.0L BiTurbo S55",
+        "engine": "6-Cylindres 3.0L BiTurbo S55",
         "type": "Coupé Sportif",
         "origHp": 410,
         "origNm": 550,
@@ -179,7 +202,7 @@ const PERFORMANCE_DATABASE = {
         "vmaxReprog": "300 km/h"
       },
       "b58_140i": {
-        "name": "M140i / M240i / 340i (B58)",
+        "name": "M140i / M240i / 340i / 440i (B58) 340ch",
         "image": "https://images.unsplash.com/photo-1555353540-64580b51c258?auto=format&fit=crop&w=1000&q=80",
         "engine": "6-Cylindres 3.0L Turbo B58",
         "type": "Berline / Coupé",
@@ -202,7 +225,7 @@ const PERFORMANCE_DATABASE = {
         "vmaxReprog": "290 km/h"
       },
       "320d_g20": {
-        "name": "120d / 320d / 420d 190ch",
+        "name": "120d / 320d / 420d 190ch (B47)",
         "image": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1000&q=80",
         "engine": "4-Cylindres 2.0L Turbo Diesel B47",
         "type": "Berline Routière",
@@ -225,7 +248,7 @@ const PERFORMANCE_DATABASE = {
         "vmaxReprog": "255 km/h"
       },
       "330d_g20": {
-        "name": "330d / 430d / 530d 265ch",
+        "name": "330d / 430d / 530d 265ch (B57)",
         "image": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1000&q=80",
         "engine": "6-Cylindres 3.0L Turbo Diesel B57",
         "type": "Grande Routière",
@@ -246,6 +269,29 @@ const PERFORMANCE_DATABASE = {
         "e85Price": "Non éligible (Diesel)",
         "vmaxOrig": "250 km/h",
         "vmaxReprog": "275 km/h"
+      },
+      "118i_f40": {
+        "name": "118i / 218i 1.5 Turbo 140ch",
+        "image": "https://images.unsplash.com/photo-1555353540-64580b51c258?auto=format&fit=crop&w=1000&q=80",
+        "engine": "3-Cylindres 1.5L Turbo B38",
+        "type": "Compacte Urbaine",
+        "origHp": 140,
+        "origNm": 220,
+        "orig0100": "8.5s",
+        "st1Hp": 175,
+        "st1Nm": 290,
+        "st1_0100": "7.5s",
+        "st1Price": "490 €",
+        "st2Hp": 190,
+        "st2Nm": 310,
+        "st2_0100": "7.1s",
+        "st2Price": "Sur devis",
+        "e85Hp": 175,
+        "e85Nm": 290,
+        "e85_0100": "7.5s",
+        "e85Price": "690 € (FlexFuel E85)",
+        "vmaxOrig": "213 km/h",
+        "vmaxReprog": "228 km/h"
       }
     }
   },
@@ -255,7 +301,7 @@ const PERFORMANCE_DATABASE = {
     "badge": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80",
     "models": {
       "a45s_amg": {
-        "name": "Classe A45 S AMG (W177)",
+        "name": "Classe A45 S AMG (W177) 421ch",
         "image": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1000&q=80",
         "engine": "4-Cylindres 2.0L Turbo M139",
         "type": "Hyper-Hatchback",
@@ -278,7 +324,7 @@ const PERFORMANCE_DATABASE = {
         "vmaxReprog": "300 km/h"
       },
       "c63s_amg": {
-        "name": "C63 S AMG V8 4.0L BiTurbo",
+        "name": "C63 S AMG V8 4.0L BiTurbo 510ch",
         "image": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1000&q=80",
         "engine": "V8 4.0L BiTurbo M177",
         "type": "Berline V8 Sport",
@@ -368,6 +414,29 @@ const PERFORMANCE_DATABASE = {
         "e85Price": "Éco-Torque Diesel Pro",
         "vmaxOrig": "180 km/h",
         "vmaxReprog": "205 km/h"
+      },
+      "citan_cdi": {
+        "name": "[UTILITAIRE] Citan 1.5 CDI 95ch / 116ch",
+        "image": "https://images.unsplash.com/photo-1586191582056-a60d02b5e28a?auto=format&fit=crop&w=1000&q=80",
+        "engine": "4-Cylindres 1.5L Turbo Diesel",
+        "type": "Fourgonnette Légère",
+        "origHp": 95,
+        "origNm": 260,
+        "orig0100": "13.5s",
+        "st1Hp": 125,
+        "st1Nm": 310,
+        "st1_0100": "10.5s",
+        "st1Price": "450 €",
+        "st2Hp": 135,
+        "st2Nm": 330,
+        "st2_0100": "10.0s",
+        "st2Price": "Sur devis",
+        "e85Hp": 125,
+        "e85Nm": 310,
+        "e85_0100": "10.5s",
+        "e85Price": "Éco-Torque Diesel",
+        "vmaxOrig": "165 km/h",
+        "vmaxReprog": "180 km/h"
       }
     }
   },
@@ -421,6 +490,29 @@ const PERFORMANCE_DATABASE = {
         "e85Price": "690 €",
         "vmaxOrig": "250 km/h",
         "vmaxReprog": "270 km/h"
+      },
+      "golf_20tdi": {
+        "name": "Golf 7 / 8 2.0 TDI 150ch",
+        "image": "https://images.unsplash.com/photo-1541348263662-e0c8de4259ba?auto=format&fit=crop&w=1000&q=80",
+        "engine": "4-Cylindres 2.0L TDI Turbo",
+        "type": "Compacte Diesel",
+        "origHp": 150,
+        "origNm": 340,
+        "orig0100": "8.5s",
+        "st1Hp": 190,
+        "st1Nm": 420,
+        "st1_0100": "7.5s",
+        "st1Price": "490 €",
+        "st2Hp": 210,
+        "st2Nm": 450,
+        "st2_0100": "7.1s",
+        "st2Price": "Sur devis",
+        "e85Hp": 190,
+        "e85Nm": 420,
+        "e85_0100": "7.5s",
+        "e85Price": "Non éligible (Diesel)",
+        "vmaxOrig": "218 km/h",
+        "vmaxReprog": "235 km/h"
       },
       "transporter_t6": {
         "name": "[UTILITAIRE] Transporter T6 / T6.1 2.0 TDI 150ch",
@@ -936,7 +1028,7 @@ const PERFORMANCE_DATABASE = {
     }
   },
   "iveco": {
-    "brand": "Iveco Utilitaires Lourds",
+    "brand": "Iveco (Daily)",
     "category": "utilitaire",
     "badge": "https://images.unsplash.com/photo-1586191582056-a60d02b5e28a?auto=format&fit=crop&w=800&q=80",
     "models": {
@@ -989,7 +1081,7 @@ const PERFORMANCE_DATABASE = {
     }
   },
   "fiat": {
-    "brand": "Fiat & Fiat Professional",
+    "brand": "Fiat Professional",
     "category": "utilitaire",
     "badge": "https://images.unsplash.com/photo-1586191582056-a60d02b5e28a?auto=format&fit=crop&w=800&q=80",
     "models": {
@@ -1070,7 +1162,7 @@ const PERFORMANCE_DATABASE = {
     "badge": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
     "models": {
       "911_gt3_992": {
-        "name": "911 GT3 (992) 4.0L Flat-6",
+        "name": "911 GT3 (992) 4.0L Flat-6 510ch",
         "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80",
         "engine": "Flat-6 4.0L Atmosphérique 9000 tr/min",
         "type": "Supercar Piste & Route",
@@ -1093,7 +1185,7 @@ const PERFORMANCE_DATABASE = {
         "vmaxReprog": "328 km/h"
       },
       "911_carrera_s": {
-        "name": "911 Carrera S (992) 3.0 BiTurbo",
+        "name": "911 Carrera S (992) 3.0 BiTurbo 450ch",
         "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80",
         "engine": "Flat-6 3.0L BiTurbo",
         "type": "Coupé GT Légendaire",
@@ -1116,7 +1208,7 @@ const PERFORMANCE_DATABASE = {
         "vmaxReprog": "325 km/h"
       },
       "macan_gts": {
-        "name": "Macan GTS 2.9 V6 BiTurbo",
+        "name": "Macan GTS 2.9 V6 BiTurbo 380ch",
         "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80",
         "engine": "V6 2.9L BiTurbo",
         "type": "SUV Sport Haute Performance",
@@ -1213,6 +1305,29 @@ const PERFORMANCE_DATABASE = {
         "e85Price": "790 €",
         "vmaxOrig": "230 km/h (bridée)",
         "vmaxReprog": "260 km/h"
+      },
+      "supra_30": {
+        "name": "GR Supra 3.0T (B58) 340ch",
+        "image": "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1000&q=80",
+        "engine": "6-Cylindres 3.0L Turbo B58",
+        "type": "Coupé GT Motorsport",
+        "origHp": 340,
+        "origNm": 500,
+        "orig0100": "4.3s",
+        "st1Hp": 420,
+        "st1Nm": 580,
+        "st1_0100": "3.8s",
+        "st1Price": "690 €",
+        "st2Hp": 460,
+        "st2Nm": 630,
+        "st2_0100": "3.5s",
+        "st2Price": "Sur devis",
+        "e85Hp": 440,
+        "e85Nm": 610,
+        "e85_0100": "3.7s",
+        "e85Price": "890 €",
+        "vmaxOrig": "250 km/h",
+        "vmaxReprog": "295 km/h"
       }
     }
   },
@@ -1266,6 +1381,181 @@ const PERFORMANCE_DATABASE = {
         "e85Price": "750 €",
         "vmaxOrig": "250 km/h",
         "vmaxReprog": "275 km/h"
+      },
+      "ibiza_tsi": {
+        "name": "Seat Ibiza / Arona 1.0 TSI 110ch",
+        "image": "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1000&q=80",
+        "engine": "3-Cylindres 1.0L TSI Turbo",
+        "type": "Citadine Polyvalente",
+        "origHp": 110,
+        "origNm": 200,
+        "orig0100": "9.9s",
+        "st1Hp": 135,
+        "st1Nm": 240,
+        "st1_0100": "8.8s",
+        "st1Price": "450 €",
+        "st2Hp": 145,
+        "st2Nm": 260,
+        "st2_0100": "8.4s",
+        "st2Price": "Sur devis",
+        "e85Hp": 135,
+        "e85Nm": 240,
+        "e85_0100": "8.8s",
+        "e85Price": "590 € (FlexFuel E85)",
+        "vmaxOrig": "195 km/h",
+        "vmaxReprog": "210 km/h"
+      }
+    }
+  },
+  "nissan": {
+    "brand": "Nissan & Utilitaires Pro",
+    "category": "utilitaire",
+    "badge": "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80",
+    "models": {
+      "gtr_r35": {
+        "name": "Nissan GT-R (R35) V6 3.8L BiTurbo 570ch",
+        "image": "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1000&q=80",
+        "engine": "V6 3.8L BiTurbo VR38DETT",
+        "type": "Supercar Mythique",
+        "origHp": 570,
+        "origNm": 637,
+        "orig0100": "2.8s",
+        "st1Hp": 650,
+        "st1Nm": 820,
+        "st1_0100": "2.6s",
+        "st1Price": "890 €",
+        "st2Hp": 720,
+        "st2Nm": 900,
+        "st2_0100": "2.4s",
+        "st2Price": "Sur devis",
+        "e85Hp": 680,
+        "e85Nm": 860,
+        "e85_0100": "2.5s",
+        "e85Price": "1 090 €",
+        "vmaxOrig": "315 km/h",
+        "vmaxReprog": "335 km/h"
+      },
+      "navara_dci": {
+        "name": "[UTILITAIRE] Navara 2.3 dCi 190ch",
+        "image": "https://images.unsplash.com/photo-1586191582056-a60d02b5e28a?auto=format&fit=crop&w=1000&q=80",
+        "engine": "4-Cylindres 2.3L Twin-Turbo Diesel",
+        "type": "Pick-up / Chantier & Remorque",
+        "origHp": 190,
+        "origNm": 450,
+        "orig0100": "10.8s",
+        "st1Hp": 225,
+        "st1Nm": 520,
+        "st1_0100": "9.2s",
+        "st1Price": "550 €",
+        "st2Hp": 240,
+        "st2Nm": 550,
+        "st2_0100": "8.7s",
+        "st2Price": "Sur devis",
+        "e85Hp": 225,
+        "e85Nm": 520,
+        "e85_0100": "9.2s",
+        "e85Price": "Traction Remorque 3.5T",
+        "vmaxOrig": "180 km/h",
+        "vmaxReprog": "200 km/h"
+      },
+      "nv300_dci": {
+        "name": "[UTILITAIRE] NV300 / Primastar 2.0 dCi 150ch",
+        "image": "https://images.unsplash.com/photo-1586191582056-a60d02b5e28a?auto=format&fit=crop&w=1000&q=80",
+        "engine": "4-Cylindres 2.0L Turbo Diesel",
+        "type": "Fourgon Moyen Professionnel",
+        "origHp": 150,
+        "origNm": 350,
+        "orig0100": "11.6s",
+        "st1Hp": 190,
+        "st1Nm": 430,
+        "st1_0100": "9.5s",
+        "st1Price": "490 €",
+        "st2Hp": 205,
+        "st2Nm": 460,
+        "st2_0100": "9.0s",
+        "st2Price": "Sur devis",
+        "e85Hp": 190,
+        "e85Nm": 430,
+        "e85_0100": "9.5s",
+        "e85Price": "Éco-Torque Diesel Pro",
+        "vmaxOrig": "174 km/h",
+        "vmaxReprog": "195 km/h"
+      }
+    }
+  },
+  "opel": {
+    "brand": "Opel & Utilitaires Pro",
+    "category": "utilitaire",
+    "badge": "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80",
+    "models": {
+      "vivaro_d": {
+        "name": "[UTILITAIRE] Vivaro 2.0 D 145ch",
+        "image": "https://images.unsplash.com/photo-1586191582056-a60d02b5e28a?auto=format&fit=crop&w=1000&q=80",
+        "engine": "4-Cylindres 2.0L Turbo Diesel",
+        "type": "Fourgon Moyen Professionnel",
+        "origHp": 145,
+        "origNm": 370,
+        "orig0100": "11.2s",
+        "st1Hp": 190,
+        "st1Nm": 440,
+        "st1_0100": "9.1s",
+        "st1Price": "490 €",
+        "st2Hp": 210,
+        "st2Nm": 470,
+        "st2_0100": "8.5s",
+        "st2Price": "Sur devis",
+        "e85Hp": 190,
+        "e85Nm": 440,
+        "e85_0100": "9.1s",
+        "e85Price": "Éco-Torque Diesel Pro",
+        "vmaxOrig": "170 km/h",
+        "vmaxReprog": "195 km/h"
+      },
+      "movano_bluehdi": {
+        "name": "[UTILITAIRE] Movano 2.2 BlueHDi 140ch",
+        "image": "https://images.unsplash.com/photo-1586191582056-a60d02b5e28a?auto=format&fit=crop&w=1000&q=80",
+        "engine": "4-Cylindres 2.2L BlueHDi Turbo",
+        "type": "Grand Fourgon Professionnel",
+        "origHp": 140,
+        "origNm": 350,
+        "orig0100": "14.1s",
+        "st1Hp": 180,
+        "st1Nm": 430,
+        "st1_0100": "10.9s",
+        "st1Price": "520 €",
+        "st2Hp": 195,
+        "st2Nm": 460,
+        "st2_0100": "10.3s",
+        "st2Price": "Sur devis",
+        "e85Hp": 180,
+        "e85Nm": 430,
+        "e85_0100": "10.9s",
+        "e85Price": "Éco-Torque Diesel Pro (-2.0L/100km)",
+        "vmaxOrig": "155 km/h",
+        "vmaxReprog": "175 km/h"
+      },
+      "corsa_turbo": {
+        "name": "Corsa 1.2 Turbo 100ch / 130ch",
+        "image": "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1000&q=80",
+        "engine": "3-Cylindres 1.2L Turbo",
+        "type": "Citadine Polyvalente",
+        "origHp": 100,
+        "origNm": 205,
+        "orig0100": "9.9s",
+        "st1Hp": 135,
+        "st1Nm": 260,
+        "st1_0100": "8.7s",
+        "st1Price": "450 €",
+        "st2Hp": 150,
+        "st2Nm": 280,
+        "st2_0100": "8.2s",
+        "st2Price": "Sur devis",
+        "e85Hp": 135,
+        "e85Nm": 260,
+        "e85_0100": "8.7s",
+        "e85Price": "590 € (FlexFuel E85)",
+        "vmaxOrig": "188 km/h",
+        "vmaxReprog": "205 km/h"
       }
     }
   }
@@ -1294,10 +1584,14 @@ class ShiftechDynoConfigurator {
     this.setupStageTabs();
     this.updateVehicleCard();
     this.drawRealisticDynoCurve();
+    this.setupQuickSearchBar();
 
     window.addEventListener('resize', () => {
       this.drawRealisticDynoCurve();
     });
+
+    // Expose instance globally for cross-module integration
+    window.mecadiagConfigurator = this;
   }
 
   setupCategoryFilters() {
@@ -1346,6 +1640,13 @@ class ShiftechDynoConfigurator {
     this.populateModels(this.currentBrand);
     this.updateVehicleCard();
     this.drawRealisticDynoCurve();
+
+    // Sync Hero Quick Search if available
+    const quickBrandSelect = document.getElementById('quick-brand-select');
+    if (quickBrandSelect && quickBrandSelect.value !== brandKey) {
+      quickBrandSelect.value = brandKey;
+      this.populateQuickModels(brandKey);
+    }
   }
 
   setupBrandButtons() {
@@ -1360,6 +1661,12 @@ class ShiftechDynoConfigurator {
         this.currentModelKey = e.target.value;
         this.updateVehicleCard();
         this.drawRealisticDynoCurve();
+
+        // Sync quick search model
+        const quickModelSelect = document.getElementById('quick-model-select');
+        if (quickModelSelect && quickModelSelect.value !== e.target.value) {
+          quickModelSelect.value = e.target.value;
+        }
       });
     }
   }
@@ -1375,7 +1682,7 @@ class ShiftechDynoConfigurator {
     Object.keys(models).forEach(key => {
       const opt = document.createElement('option');
       opt.value = key;
-      opt.textContent = models[key].name;
+      opt.textContent = `${models[key].name} (${models[key].engine})`;
       if (first) {
         opt.selected = true;
         this.currentModelKey = key;
@@ -1614,6 +1921,112 @@ class ShiftechDynoConfigurator {
     }
 
     ctx.restore();
+  }
+
+  // HERO QUICK SEARCH INTEGRATION & SYNCHRONIZATION
+  setupQuickSearchBar() {
+    const typeSelect = document.getElementById('quick-type-select');
+    const brandSelect = document.getElementById('quick-brand-select');
+    const modelSelect = document.getElementById('quick-model-select');
+    const stageSelect = document.getElementById('quick-stage-select');
+    const calcBtn = document.getElementById('btn-quick-calc');
+
+    if (!brandSelect || !modelSelect) return;
+
+    // Populate brands according to vehicle type filter
+    const populateQuickBrands = (categoryFilter = 'all') => {
+      brandSelect.innerHTML = '';
+      let firstBrandKey = null;
+
+      Object.keys(PERFORMANCE_DATABASE).forEach(bKey => {
+        const bData = PERFORMANCE_DATABASE[bKey];
+        const isMatch = (categoryFilter === 'all') || 
+                        (categoryFilter === 'utilitaire' && (bData.category === 'utilitaire' || Object.values(bData.models).some(m => m.name.includes('[UTILITAIRE]')))) ||
+                        (categoryFilter === 'sport' && bData.category === 'sport');
+
+        if (isMatch) {
+          const opt = document.createElement('option');
+          opt.value = bKey;
+          opt.textContent = bData.brand;
+          if (!firstBrandKey) firstBrandKey = bKey;
+          brandSelect.appendChild(opt);
+        }
+      });
+
+      if (brandSelect.querySelector(`option[value="${this.currentBrand}"]`)) {
+        brandSelect.value = this.currentBrand;
+      } else if (firstBrandKey) {
+        brandSelect.value = firstBrandKey;
+      }
+
+      this.populateQuickModels(brandSelect.value);
+    };
+
+    if (typeSelect) {
+      typeSelect.addEventListener('change', (e) => {
+        populateQuickBrands(e.target.value);
+      });
+    }
+
+    brandSelect.addEventListener('change', (e) => {
+      this.populateQuickModels(e.target.value);
+    });
+
+    if (calcBtn) {
+      calcBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const chosenBrand = brandSelect.value;
+        const chosenModel = modelSelect.value;
+        const chosenStage = stageSelect ? stageSelect.value : 'stage1';
+
+        // Update brand in main configurator
+        this.selectBrand(chosenBrand);
+
+        // Update model in main configurator
+        if (chosenModel) {
+          this.currentModelKey = chosenModel;
+          if (this.modelSelect) this.modelSelect.value = chosenModel;
+        }
+
+        // Update stage in main configurator
+        if (chosenStage) {
+          this.currentStage = chosenStage;
+          this.stageTabs.forEach(t => {
+            t.classList.toggle('active', t.dataset.stage === chosenStage);
+          });
+        }
+
+        this.updateVehicleCard();
+        this.drawRealisticDynoCurve();
+
+        // Smooth scroll to configurator panel
+        const cfgSection = document.getElementById('configurateur');
+        if (cfgSection) {
+          cfgSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+
+    // Initial fill
+    populateQuickBrands('all');
+  }
+
+  populateQuickModels(bKey) {
+    const modelSelect = document.getElementById('quick-model-select');
+    if (!modelSelect) return;
+
+    modelSelect.innerHTML = '';
+    const bData = PERFORMANCE_DATABASE[bKey];
+    if (!bData) return;
+
+    Object.keys(bData.models).forEach((mKey, idx) => {
+      const m = bData.models[mKey];
+      const opt = document.createElement('option');
+      opt.value = mKey;
+      opt.textContent = `${m.name} (${m.engine})`;
+      if (idx === 0) opt.selected = true;
+      modelSelect.appendChild(opt);
+    });
   }
 }
 

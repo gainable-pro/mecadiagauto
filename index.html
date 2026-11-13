@@ -117,52 +117,53 @@
       <!-- BARRE DE RECHERCHE FLOTTANTE HORIZONTALE (STYLE SHIFTECH) -->
       <div class="shiftech-search-bar" id="quick-search">
         <div class="search-field">
-          <label>Type de véhicule</label>
-          <select class="search-select">
-            <option>Voiture de tourisme / Sportive</option>
-            <option>Véhicule Utilitaire</option>
-            <option>Poids Lourd / Agricole</option>
+          <label for="quick-type-select">Type de véhicule</label>
+          <select id="quick-type-select" class="search-select">
+            <option value="all">Tous types (Tourisme, Sport &amp; Utilitaire)</option>
+            <option value="sport">Voiture de tourisme / Sportive</option>
+            <option value="utilitaire">Véhicule Utilitaire / Fourgon Pro</option>
           </select>
         </div>
 
         <div class="search-field">
-          <label>Marque</label>
+          <label for="quick-brand-select">Marque</label>
           <select id="quick-brand-select" class="search-select">
             <option value="audi">Audi</option>
             <option value="bmw">BMW</option>
-            <option value="mercedes">Mercedes-AMG</option>
-            <option value="volkswagen">Volkswagen</option>
+            <option value="mercedes">Mercedes-Benz &amp; AMG</option>
+            <option value="volkswagen">Volkswagen &amp; Pros</option>
+            <option value="renault">Renault &amp; Utilitaires Pro</option>
+            <option value="peugeot">Peugeot &amp; Utilitaires Pro</option>
+            <option value="citroen">Citroën &amp; Utilitaires Pro</option>
+            <option value="ford">Ford &amp; Utilitaires Pro</option>
+            <option value="iveco">Iveco (Daily)</option>
+            <option value="fiat">Fiat Professional</option>
             <option value="porsche">Porsche</option>
-            <option value="renault">Renault Sport</option>
+            <option value="toyota">Toyota &amp; Proace</option>
+            <option value="seat_cupra">Cupra &amp; Seat</option>
+            <option value="nissan">Nissan &amp; Utilitaires</option>
+            <option value="opel">Opel &amp; Utilitaires</option>
           </select>
         </div>
 
         <div class="search-field">
-          <label>Modèle</label>
-          <select id="quick-model-select" class="search-select">
-            <option>RS3 2.5 TFSI (8V / 8Y)</option>
-            <option>M3 / M4 Competition (G80/G82)</option>
-            <option>A45 S AMG 4Matic+</option>
-            <option>Golf 8 R 2.0 TSI</option>
-            <option>911 Carrera (992)</option>
-            <option>Mégane 4 R.S. Trophy</option>
-          </select>
+          <label for="quick-model-select">Modèle &amp; Motorisation</label>
+          <select id="quick-model-select" class="search-select"></select>
         </div>
 
         <div class="search-field">
-          <label>Optimisation souhaitée</label>
-          <select class="search-select">
-            <option>Stage 1 Cartographique</option>
-            <option>Conversion Bio-Éthanol E85</option>
-            <option>Stage 1 + E85 Combiné</option>
-            <option>Stage 2 Sur Mesure</option>
+          <label for="quick-stage-select">Optimisation souhaitée</label>
+          <select id="quick-stage-select" class="search-select">
+            <option value="stage1">Stage 1 Cartographique (Sur mesure)</option>
+            <option value="stage2">Stage 2 (+ Pièces mécaniques)</option>
+            <option value="flexfuel">Conversion Bio-Éthanol E85 FlexFuel / Éco-Torque</option>
           </select>
         </div>
 
         <div>
-          <a href="#configurateur" class="btn-devis-red-red" style="padding: 13px 24px; justify-content: center; width: 100%;">
+          <button id="btn-quick-calc" class="btn-devis-red-red" style="padding: 13px 24px; justify-content: center; width: 100%; border:none; cursor:pointer;">
             Calculer les gains →
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -200,6 +201,8 @@
       <button class="shiftech-brand-btn" data-brand="porsche">Porsche</button>
       <button class="shiftech-brand-btn" data-brand="toyota">Toyota &amp; Pro</button>
       <button class="shiftech-brand-btn" data-brand="seat_cupra">Cupra / Seat</button>
+      <button class="shiftech-brand-btn" data-brand="nissan">Nissan &amp; Pro</button>
+      <button class="shiftech-brand-btn" data-brand="opel">Opel &amp; Pro</button>
     </div>
 
     <!-- Panneau central du configurateur -->

@@ -36,18 +36,9 @@ function initMobileNav() {
   }
 }
 
-/* Shiftech Quick Search Bar Sync with Configurator */
+/* Shiftech Quick Search Bar Sync with Configurator (handled by dyno-simulator.js) */
 function initQuickSearchBar() {
-  const brandSelect = document.getElementById('quick-brand-select');
-  if (!brandSelect) return;
-
-  brandSelect.addEventListener('change', (e) => {
-    const selectedBrand = e.target.value;
-    const targetBrandBtn = document.querySelector(`.shiftech-brand-btn[data-brand="${selectedBrand}"]`);
-    if (targetBrandBtn) {
-      targetBrandBtn.click();
-    }
-  });
+  // Synchronisation dynamique gérée dans dyno-simulator.js avec la base 15 marques / 63 modèles
 }
 
 /* E85 Bio-ethanol Savings Calculator (Shiftech Style) */
