@@ -304,15 +304,31 @@ a {
 }
 
 .hero-shiftech-title .text-silver {
-  color: var(--text-silver);
+  color: #ffffff;
 }
 
 .hero-shiftech-sub {
-  font-size: 1.15rem;
-  color: var(--text-silver);
-  max-width: 720px;
-  line-height: 1.7;
-  margin-bottom: 40px;
+  font-size: 1.18rem;
+  color: #ffffff !important;
+  max-width: 760px;
+  line-height: 1.75;
+  margin-bottom: 36px;
+  background: rgba(5, 6, 8, 0.72);
+  border-left: 3px solid var(--red-racing);
+  padding: 16px 22px;
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.hero-shiftech-sub strong {
+  color: #ffffff !important;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: var(--red-racing);
+  text-underline-offset: 3px;
 }
 
 /* Shiftech Floating Quick Selector Bar */
@@ -397,10 +413,11 @@ a {
   color: #ffffff;
 }
 
-.section-desc-shiftech {
+.section-desc-shiftech, .section-desc-shiftech-shiftech {
   font-size: 1.05rem;
-  color: var(--text-silver);
+  color: #f1f5f9;
   line-height: 1.7;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Configurator Category Filter (Tous / Berlines & Sport / Utilitaires Pro) */
@@ -1320,7 +1337,12 @@ a {
   /* Hero & Search Encadrement */
   .hero-shiftech { padding-top: 50px; padding-bottom: 40px; }
   .hero-shiftech-title { font-size: 2.1rem; line-height: 1.15; }
-  .hero-shiftech-subtitle { font-size: 0.95rem; }
+  .hero-shiftech-sub {
+    font-size: 0.98rem;
+    padding: 12px 16px;
+    margin-bottom: 28px;
+    color: #ffffff !important;
+  }
   .shiftech-search-bar {
     grid-template-columns: 1fr;
     padding: 12px;
@@ -1529,8 +1551,8 @@ a {
   right: 0;
   bottom: 0;
   background: 
-    linear-gradient(180deg, rgba(5, 6, 8, 0.42) 0%, rgba(5, 6, 8, 0.62) 50%, rgba(5, 6, 8, 0.82) 100%),
-    radial-gradient(circle at 65% 35%, rgba(225, 29, 72, 0.05) 0%, transparent 60%);
+    linear-gradient(180deg, rgba(5, 6, 8, 0.58) 0%, rgba(5, 6, 8, 0.70) 45%, rgba(5, 6, 8, 0.88) 100%),
+    radial-gradient(circle at 75% 35%, rgba(225, 29, 72, 0.06) 0%, transparent 60%);
   pointer-events: none;
   z-index: 10;
 }
