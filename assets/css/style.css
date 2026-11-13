@@ -1149,27 +1149,311 @@ a {
   background: #10b981;
 }
 
+/* ==========================================================================
+   TABLE RESPONSIVE WRAPPER & QUALITY INDICATORS GRID
+   ========================================================================== */
+.table-responsive-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.cfg-indicators-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* ==========================================================================
+   FOOTER SECTEUR 100 KM BANNER & CITY PILLS
+   ========================================================================== */
+.footer-secteur-banner {
+  background: linear-gradient(180deg, rgba(15, 18, 24, 0.98) 0%, rgba(8, 10, 14, 0.98) 100%);
+  border: 1px solid var(--border-silver);
+  border-radius: var(--radius-md);
+  padding: 36px 32px;
+  margin-bottom: 48px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-secteur-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red-racing), transparent);
+}
+
+.footer-secteur-badge {
+  display: inline-block;
+  background: rgba(225, 29, 72, 0.15);
+  border: 1px solid var(--red-racing);
+  color: var(--red-racing);
+  padding: 5px 16px;
+  border-radius: 999px;
+  font-family: var(--font-tech);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.footer-secteur-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.footer-secteur-desc {
+  max-width: 800px;
+  margin: 0 auto 24px;
+  color: var(--text-silver);
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+.footer-secteur-cities-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.footer-city-pill {
+  background: #000000;
+  border: 1px solid var(--border-light);
+  color: var(--text-silver-light);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-tech);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.footer-city-pill:hover {
+  background: var(--red-racing);
+  border-color: var(--red-racing);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(225, 29, 72, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-footer-secteur {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #000000;
+  border: 1px solid var(--red-racing);
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-tech);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  box-shadow: 0 0 20px rgba(225, 29, 72, 0.25);
+}
+
+.btn-footer-secteur:hover {
+  background: var(--red-racing);
+  color: #ffffff;
+  box-shadow: 0 0 30px var(--red-racing-glow);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   RESPONSIVE ENCADREMENT & MOBILE OPTIMIZATIONS (1024px / 768px)
+   ========================================================================== */
+
 @media (max-width: 1024px) {
   .hero-shiftech-title { font-size: 2.8rem; }
-  .shiftech-search-bar { grid-template-columns: 1fr 1fr; }
-  .shiftech-brands-bar { grid-template-columns: repeat(3, 1fr); }
-  .cfg-content-grid { grid-template-columns: 1fr; }
-  .services-grid-shiftech { grid-template-columns: 1fr 1fr; }
-  .options-grid-shiftech { grid-template-columns: repeat(2, 1fr); }
-  .e85-calc-shiftech { grid-template-columns: 1fr; }
-  .zone-container-shiftech { grid-template-columns: 1fr; }
-  .footer-container-shiftech { grid-template-columns: 1fr 1fr; }
+  .shiftech-search-bar { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .shiftech-brands-bar { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .cfg-content-grid { grid-template-columns: 1fr; gap: 24px; padding: 22px; }
+  .services-grid-shiftech { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .options-grid-shiftech { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .e85-calc-shiftech { grid-template-columns: 1fr; gap: 24px; }
+  .zone-container-shiftech { grid-template-columns: 1fr; gap: 28px; }
+  .footer-container-shiftech-shiftech { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .footer-secteur-banner { padding: 28px 20px; }
 }
 
 @media (max-width: 768px) {
-  .nav-links, .nav-actions .btn-devis-red { display: none; }
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  .section-padding {
+    padding: 45px 14px;
+  }
+
+  /* Header & Navigation */
+  .nav-links, .nav-actions .btn-devis-red-red { display: none; }
   .mobile-menu-toggle { display: block; }
-  .hero-shiftech-title { font-size: 2.2rem; }
-  .shiftech-search-bar { grid-template-columns: 1fr; }
-  .shiftech-brands-bar { grid-template-columns: repeat(2, 1fr); }
-  .services-grid-shiftech { grid-template-columns: 1fr; }
-  .options-grid-shiftech { grid-template-columns: 1fr; }
-  .footer-container-shiftech { grid-template-columns: 1fr; }
+  .topbar-shiftech { font-size: 0.72rem; padding: 6px 12px; }
+
+  /* Hero & Search Encadrement */
+  .hero-shiftech { padding-top: 50px; padding-bottom: 40px; }
+  .hero-shiftech-title { font-size: 2.1rem; line-height: 1.15; }
+  .hero-shiftech-subtitle { font-size: 0.95rem; }
+  .shiftech-search-bar {
+    grid-template-columns: 1fr;
+    padding: 12px;
+    gap: 10px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Brands & Category Filter */
+  .cfg-category-filter { gap: 6px; }
+  .cfg-cat-btn { padding: 7px 12px; font-size: 0.78rem; flex: 1; text-align: center; }
+  .shiftech-brands-bar { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .shiftech-brand-btn { padding: 12px 8px; font-size: 0.8rem; letter-spacing: 0.5px; }
+
+  /* Configurator Panel Encadrement */
+  .shiftech-config-panel {
+    border-radius: var(--radius-sm);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
+  }
+
+  .cfg-top-controls {
+    padding: 14px 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .cfg-top-controls > div {
+    max-width: 100% !important;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 8px !important;
+  }
+
+  .cfg-stage-selector {
+    width: 100%;
+    display: flex;
+    gap: 4px;
+  }
+
+  .cfg-stage-tab {
+    flex: 1;
+    padding: 9px 4px;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .cfg-content-grid {
+    padding: 14px 10px;
+    gap: 18px;
+  }
+
+  .cfg-visual-card {
+    padding: 12px 10px;
+  }
+
+  .cfg-model-name { font-size: 1.35rem; }
+  .cfg-engine-name { font-size: 0.84rem; margin-bottom: 12px; }
+
+  .shiftech-table th, .shiftech-table td {
+    padding: 9px 6px;
+    font-size: 0.82rem;
+  }
+
+  .cfg-booking-bar {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 12px;
+    padding: 14px 12px;
+  }
+
+  .cfg-booking-bar #btn-cfg-book {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cfg-graph-wrapper {
+    padding: 12px 10px;
+  }
+
+  #dyno-chart-pro {
+    height: 240px;
+  }
+
+  .cfg-indicators-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .simulator-disclaimer-box {
+    margin: 14px 10px 14px;
+    padding: 16px 12px;
+    font-size: 0.86rem;
+  }
+
+  .disclaimer-params-grid {
+    grid-template-columns: 1fr;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  /* Radar 100km Encadrement */
+  .radar-shiftech-box {
+    padding: 16px 10px;
+  }
+
+  .radar-circle-bg {
+    max-height: 290px;
+  }
+
+  .radar-hub-miramas {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+  }
+
+  .radar-city-pin {
+    padding: 2px 6px;
+    font-size: 0.72rem;
+  }
+
+  /* Services & Options Grid */
+  .services-grid-shiftech { grid-template-columns: 1fr; gap: 16px; }
+  .options-grid-shiftech { grid-template-columns: 1fr; gap: 14px; }
+  .banc-facility-banner { padding: 28px 16px; }
+
+  /* Footer */
+  .footer-container-shiftech-shiftech { grid-template-columns: 1fr; gap: 24px; }
+  .footer-secteur-banner { padding: 22px 14px; margin-bottom: 30px; }
+  .footer-secteur-title { font-size: 1.35rem; }
+  .footer-city-pill { padding: 5px 10px; font-size: 0.78rem; }
+  .btn-footer-secteur { width: 100%; justify-content: center; font-size: 0.85rem; padding: 12px 14px; }
 }
 
 

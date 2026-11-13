@@ -80,7 +80,6 @@
           <li><a href="ethanol-e85.html" class="nav-link">Bio-Éthanol E85</a></li>
           <li><a href="electronique-calculateurs.html" class="nav-link">Calculateurs</a></li>
           <li><a href="adblue-fap-diag.html" class="nav-link">AdBlue / FAP</a></li>
-          <li><a href="secteur-miramas-100km.html" class="nav-link">Secteur 100km</a></li>
           <li><a href="contact-devis.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -234,6 +233,7 @@
           <p id="cfg-car-engine" class="cfg-engine-name">5-Cylindres 2.5L Turbo</p>
 
           <!-- Tableau comparatif officiel Shiftech -->
+          <div class="table-responsive-wrapper">
           <table class="shiftech-table">
             <thead>
               <tr>
@@ -269,6 +269,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
 
           <!-- Réservation avec tarif -->
           <div class="cfg-booking-bar">
@@ -296,7 +297,7 @@
           <canvas id="dyno-chart-pro"></canvas>
 
           <!-- 3 indicateurs qualité atelier -->
-          <div style="margin-top:20px; display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;">
+          <div class="cfg-indicators-grid">
             <div style="background:#000000; border:1px solid var(--border-light); padding:14px; border-radius:var(--radius-sm); text-align:center;">
               <div style="font-size:0.72rem; color:var(--text-dim); text-transform:uppercase; font-family:var(--font-tech); font-weight:700;">Acquisition Données</div>
               <div style="font-family:var(--font-tech); font-weight:800; font-size:1.15rem; color:#fff; margin-top:2px;">Banc 4x4 Synchro</div>
@@ -642,6 +643,38 @@
 
   <!-- FOOTER SHIFTECH (NOIR, ARGENT, BLANC) -->
   <footer class="main-footer-shiftech-shiftech">
+    <!-- BANDEAU SECTEUR 100 KM (PIED DE PAGE) -->
+    <div class="footer-secteur-banner">
+      <div class="footer-secteur-content">
+        <div class="footer-secteur-badge">RAYON D'ACTION 100 KM • ATELIER MIRAMAS</div>
+        <h3 class="footer-secteur-title">Atelier de Reprogrammation &amp; Banc 4x4 à Miramas (13)</h3>
+        <p class="footer-secteur-desc">
+          Idéalement situé en Zone Industrielle Les Molières à Miramas, notre centre de haute précision accueille les passionnés de supercars, les propriétaires de sportives et les artisans / flottes de tout le secteur PACA dans un rayon de 100 km.
+        </p>
+
+        <div class="footer-secteur-cities-pills">
+          <a href="villes/salon-de-provence.html" class="footer-city-pill">Salon-de-Provence (15 min)</a>
+          <a href="villes/istres.html" class="footer-city-pill">Istres (14 min)</a>
+          <a href="villes/fos-sur-mer.html" class="footer-city-pill">Fos-sur-Mer (20 min)</a>
+          <a href="villes/martigues.html" class="footer-city-pill">Martigues (28 min)</a>
+          <a href="villes/aix-en-provence.html" class="footer-city-pill">Aix-en-Provence (35 min)</a>
+          <a href="villes/marseille.html" class="footer-city-pill">Marseille (45 min)</a>
+          <a href="villes/arles.html" class="footer-city-pill">Arles (35 min)</a>
+          <a href="villes/avignon.html" class="footer-city-pill">Avignon (45 min)</a>
+          <a href="villes/nimes.html" class="footer-city-pill">Nîmes (55 min)</a>
+          <a href="villes/vitrolles.html" class="footer-city-pill">Vitrolles (30 min)</a>
+          <a href="villes/cavaillon.html" class="footer-city-pill">Cavaillon (30 min)</a>
+          <a href="villes/marignane.html" class="footer-city-pill">Marignane (35 min)</a>
+        </div>
+
+        <div style="margin-top: 22px;">
+          <a href="secteur-miramas-100km.html" class="btn-footer-secteur">
+            📍 DÉCOUVRIR LE SECTEUR 100 KM &amp; LES 12 VILLES DESSERVIES →
+          </a>
+        </div>
+      </div>
+    </div>
+
     <div class="footer-container-shiftech-shiftech">
       <div>
         <img src="assets/images/logo.svg" alt="MECADIAG AUTO" width="230" height="48" style="margin-bottom:16px;">
