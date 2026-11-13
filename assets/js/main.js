@@ -1,10 +1,11 @@
 /**
- * MECADIAG AUTO - CORE INTERACTION SCRIPTS
- * E85 Calculator, Radar Interactivity, Mobile Nav, Quote & Booking
+ * MECADIAG AUTO - SHIFTECH EXPERIENCE & CORE INTERACTIONS
+ * Calculateur E85, Radar 100km Miramas, Barre de recherche rapide & Devis WhatsApp
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
+  initQuickSearchBar();
   initE85Calculator();
   initRadarPins();
   initQuoteForm();
@@ -26,15 +27,29 @@ function initMobileNav() {
         navLinks.style.top = '100%';
         navLinks.style.left = '0';
         navLinks.style.width = '100%';
-        navLinks.style.background = 'rgba(7, 9, 14, 0.98)';
+        navLinks.style.background = '#000000';
         navLinks.style.padding = '24px';
-        navLinks.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+        navLinks.style.borderBottom = '1px solid rgba(255,255,255,0.15)';
       }
     });
   }
 }
 
-/* E85 Bio-ethanol Savings Calculator */
+/* Shiftech Quick Search Bar Sync with Configurator */
+function initQuickSearchBar() {
+  const brandSelect = document.getElementById('quick-brand-select');
+  if (!brandSelect) return;
+
+  brandSelect.addEventListener('change', (e) => {
+    const selectedBrand = e.target.value;
+    const targetBrandBtn = document.querySelector(`.shiftech-brand-btn[data-brand="${selectedBrand}"]`);
+    if (targetBrandBtn) {
+      targetBrandBtn.click();
+    }
+  });
+}
+
+/* E85 Bio-ethanol Savings Calculator (Shiftech Style) */
 function initE85Calculator() {
   const kmSlider = document.getElementById('e85-km-slider');
   const kmValDisplay = document.getElementById('e85-km-display');
@@ -47,10 +62,10 @@ function initE85Calculator() {
     const km = parseInt(kmSlider.value, 10);
     if (kmValDisplay) kmValDisplay.textContent = km.toLocaleString('fr-FR') + ' km / an';
 
-    const avgLitersPer100 = 8.0;
-    const priceSP95 = 1.92;
+    const avgLitersPer100 = 8.5;
+    const priceSP95 = 1.94;
     const priceE85 = 0.84;
-    const e85Overconsumption = 1.20; // +20% volume on E85
+    const e85Overconsumption = 1.20;
 
     const costSP95 = (km / 100) * avgLitersPer100 * priceSP95;
     const costE85 = (km / 100) * (avgLitersPer100 * e85Overconsumption) * priceE85;
@@ -106,16 +121,16 @@ function initQuoteForm() {
     e.preventDefault();
     const brand = document.getElementById('quote-brand')?.value || '';
     const model = document.getElementById('quote-model')?.value || '';
-    const service = document.getElementById('quote-service')?.value || 'Reprogrammation';
+    const service = document.getElementById('quote-service')?.value || 'Reprogrammation Stage 1';
     const phone = document.getElementById('quote-phone')?.value || '';
     const message = document.getElementById('quote-notes')?.value || '';
 
     const text = encodeURIComponent(
-      `Bonjour MECA DIAG AUTO, je souhaite un devis :\n` +
-      `- Véhicule : ${brand} ${model}\n` +
-      `- Prestation souhaitée : ${service}\n` +
-      `- Mon Téléphone : ${phone}\n` +
-      (message ? `- Précisions : ${message}\n` : '') +
+      `Bonjour MECADIAG AUTO, je souhaite un devis / rendez-vous :\n` +
+      `• Véhicule : ${brand} ${model}\n` +
+      `• Prestation : ${service}\n` +
+      `• Téléphone : ${phone}\n` +
+      (message ? `• Précisions : ${message}\n` : '') +
       `Merci !`
     );
 
@@ -137,4 +152,3 @@ function initSmoothScroll() {
     });
   });
 }
-
