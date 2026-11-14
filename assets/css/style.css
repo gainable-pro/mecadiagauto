@@ -1668,3 +1668,204 @@ a {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
+
+
+/* ==========================================================================
+   SECTION RÉPARATION ÉLECTRONIQUE (ECU, BOITIER FRM/RFM, COMPTEURS)
+   ========================================================================== */
+
+.reparation-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.reparation-card {
+  background: rgba(10, 12, 18, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.reparation-card:hover {
+  border-color: var(--red-racing);
+  box-shadow: 0 16px 45px rgba(225, 29, 72, 0.15);
+  transform: translateY(-4px);
+}
+
+.rep-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.rep-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.rep-badge {
+  font-family: var(--font-tech);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: rgba(225, 29, 72, 0.15);
+  border: 1px solid var(--red-racing);
+  color: #ffffff;
+}
+
+.reparation-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.rep-symptoms {
+  background: rgba(5, 6, 8, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 18px;
+}
+
+.rep-symptoms strong {
+  display: block;
+  font-family: var(--font-tech);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--red-racing);
+  margin-bottom: 8px;
+}
+
+.rep-symptoms ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rep-symptoms li {
+  font-size: 0.88rem;
+  color: var(--text-silver-light);
+  line-height: 1.5;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.rep-symptoms li::before {
+  content: '⚠️';
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.rep-desc {
+  font-size: 0.94rem;
+  color: var(--text-silver);
+  line-height: 1.65;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.rep-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.rep-price {
+  font-family: var(--font-tech);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Shipping Banner */
+.rep-shipping-banner {
+  margin-top: 36px;
+  background: linear-gradient(135deg, rgba(225, 29, 72, 0.14) 0%, rgba(10, 12, 18, 0.95) 100%);
+  border: 1px solid var(--red-racing);
+  border-radius: var(--radius-md);
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.shipping-content-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.shipping-icon {
+  font-size: 2.8rem;
+  flex-shrink: 0;
+}
+
+.shipping-info h4 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.shipping-info p {
+  font-size: 0.92rem;
+  color: var(--text-silver);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.shipping-cta {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .reparation-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .rep-shipping-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .shipping-content-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .shipping-cta {
+    width: 100%;
+    flex-direction: column;
+  }
+  .shipping-cta a {
+    width: 100%;
+    justify-content: center;
+  }
+}

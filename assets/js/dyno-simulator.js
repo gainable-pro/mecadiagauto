@@ -1785,7 +1785,7 @@ class ShiftechDynoConfigurator {
         `• Motorisation : ${data.engine}\n` +
         `• Configuration choisie : ${stageBadge} (${targetHp} Ch / ${targetNm} Nm)\n` +
         `• Tarif indicatif : ${targetPrice}\n` +
-        `Merci de me recontacter pour un passage sur votre banc de puissance 4x4.`
+        `Merci de me recontacter pour mon véhicule (passage banc d'essai partenaire possible).`
       );
       bookBtn.href = `https://wa.me/33650624972?text=${msg}`;
     }
