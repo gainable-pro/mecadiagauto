@@ -39,6 +39,32 @@
 </head>
 <body>
 
+  <!-- CINEMATIC INTRO SPLASH OVERLAY (LANCEMENT DU SITE EN GRAND AVEC LOGO ANIMÉ) -->
+  <div id="site-intro-overlay" class="site-intro-overlay" aria-hidden="true">
+    <div class="intro-content">
+      <div class="intro-status-hud">
+        <span class="hud-dot"></span>
+        <span>INITIALISATION SYSTÈME // MECADIAG AUTO • ATELIER MIRAMAS</span>
+      </div>
+
+      <div class="intro-logo-stage">
+        <img src="assets/images/logo.svg" alt="MECADIAG AUTO" class="intro-logo-img">
+      </div>
+
+      <div class="intro-progress-bar">
+        <div class="intro-progress-fill" id="intro-progress-fill"></div>
+      </div>
+
+      <div class="intro-sub-tech">
+        <span>BANC D'ESSAI • CARTOGRAPHIES MOTEUR • MICRO-ÉLECTRONIQUE AUTOMOBILE</span>
+      </div>
+    </div>
+
+    <button id="btn-skip-intro" class="btn-skip-intro" aria-label="Passer l'introduction">
+      Passer l'intro ✕
+    </button>
+  </div>
+
   <!-- DYNAMIC MOVING BACKGROUND (MERCEDES-AMG, BMW PACK M, PORSCHE, MUSTANG) -->
   <div class="dynamic-bg-stage" id="dynamic-bg-stage">
     <div class="dynamic-bg-slide active" id="slide-mercedes" style="background-image: url('https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1920&q=85');"></div>

@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initCinematicIntro();
   initMobileNav();
   initDynamicCarBackground();
   initQuickSearchBar();
@@ -282,4 +283,41 @@ function initDynamicCarBackground() {
       }
     }, { passive: true });
   }
+}
+
+/* Cinematic Intro Splash Screen (Lancement du site avec Logo en Grand) */
+function initCinematicIntro() {
+  const overlay = document.getElementById('site-intro-overlay');
+  const progressFill = document.getElementById('intro-progress-fill');
+  const skipBtn = document.getElementById('btn-skip-intro');
+
+  if (!overlay) return;
+
+  const introPlayed = sessionStorage.getItem('mecadiag_intro_played');
+  if (introPlayed) {
+    overlay.style.display = 'none';
+    return;
+  }
+
+  function dismissIntro() {
+    overlay.classList.add('fade-out');
+    sessionStorage.setItem('mecadiag_intro_played', 'true');
+    setTimeout(() => {
+      overlay.style.display = 'none';
+    }, 750);
+  }
+
+  if (skipBtn) {
+    skipBtn.addEventListener('click', dismissIntro);
+  }
+
+  // Launch progress bar animation
+  setTimeout(() => {
+    if (progressFill) progressFill.style.width = '100%';
+  }, 100);
+
+  // Auto-dismiss after 2.2 seconds
+  setTimeout(() => {
+    dismissIntro();
+  }, 2200);
 }
