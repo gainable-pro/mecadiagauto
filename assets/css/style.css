@@ -225,38 +225,34 @@ a {
   white-space: nowrap !important;
 }
 
-.btn-phone-shiftech {
-  display: flex;
+.nav-mobile-action-call {
+  display: none !important;
+}
+
+.btn-phone-shiftech,
+.btn-phone-shiftech-shiftech {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   background: transparent;
   border: 1px solid var(--border-silver);
   color: var(--text-white);
-  padding: 9px 18px;
+  padding: 10px 20px;
   border-radius: var(--radius-sm);
   font-family: var(--font-tech);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 1px;
   transition: var(--transition-fast);
   white-space: nowrap !important;
-  flex-shrink: 0;
+  text-decoration: none;
 }
 
-/* Hide mobile call item on desktop */
-.nav-mobile-action-call {
-  display: none !important;
-}
-
-@media (max-width: 768px) {
-  .nav-mobile-action-call {
-    display: block !important;
-  }
-}
-
-.btn-phone-shiftech:hover {
-  border-color: var(--text-white);
-  background: rgba(255, 255, 255, 0.05);
+.btn-phone-shiftech:hover,
+.btn-phone-shiftech-shiftech:hover {
+  border-color: var(--red-racing);
+  color: #fff;
+  background: rgba(225, 29, 72, 0.1);
 }
 
 .btn-devis-red {
