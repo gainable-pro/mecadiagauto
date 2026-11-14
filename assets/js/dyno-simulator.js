@@ -1,5 +1,5 @@
 /**
- * MECADIAG AUTO - CONFIGURATEUR PERFORMANCE HAUTE PRÉCISION (STYLE SHIFTECH / OG PERFORMANCE)
+ * MECA DIAG SOFT AUTO - CONFIGURATEUR PERFORMANCE HAUTE PRÉCISION (STYLE SHIFTECH / OG PERFORMANCE)
  * Base de données exhaustive : 15 Marques, 63 Modèles (Sportives, Berlines & Utilitaires Pro)
  * Synchronisation bidirectionnelle avec la barre de recherche rapide (Hero Quick Search)
  */
@@ -1780,7 +1780,7 @@ class ShiftechDynoConfigurator {
     const bookBtn = document.getElementById('btn-cfg-book');
     if (bookBtn) {
       const msg = encodeURIComponent(
-        `Bonjour MECADIAG AUTO (Miramas), je souhaite réserver pour mon véhicule :\n` +
+        `Bonjour MECA DIAG SOFT AUTO (Miramas), je souhaite réserver pour mon véhicule :\n` +
         `• Véhicule : ${PERFORMANCE_DATABASE[this.currentBrand].brand} ${data.name}\n` +
         `• Motorisation : ${data.engine}\n` +
         `• Configuration choisie : ${stageBadge} (${targetHp} Ch / ${targetNm} Nm)\n` +
