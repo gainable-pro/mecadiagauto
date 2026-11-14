@@ -1,5 +1,5 @@
 /**
- * MECADIAG AUTO - SHIFTECH EXPERIENCE & CORE INTERACTIONS
+ * MECA DIAG SOFT AUTO - SHIFTECH EXPERIENCE & CORE INTERACTIONS
  * Calculateur E85, Radar 100km Miramas, Barre de recherche rapide & Devis WhatsApp
  */
 
@@ -120,7 +120,7 @@ function initQuoteForm() {
     const message = document.getElementById('quote-notes')?.value || '';
 
     const text = encodeURIComponent(
-      `Bonjour MECADIAG AUTO, je souhaite un devis / rendez-vous :\n` +
+      `Bonjour MECA DIAG SOFT AUTO, je souhaite un devis / rendez-vous :\n` +
       `• Véhicule : ${brand} ${model}\n` +
       `• Prestation : ${service}\n` +
       `• Téléphone : ${phone}\n` +
