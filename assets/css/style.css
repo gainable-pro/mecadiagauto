@@ -847,23 +847,27 @@ a {
 .services-grid-shiftech {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 26px;
 }
 
 .service-card-shiftech {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-light);
+  background: rgba(8, 10, 15, 0.96) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
   border-radius: var(--radius-md);
   padding: 34px 28px;
   display: flex;
   flex-direction: column;
   transition: var(--transition-smooth);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.92);
 }
 
 .service-card-shiftech:hover {
-  border-color: var(--red-racing);
+  border-color: var(--red-racing) !important;
   transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 20px 50px rgba(225, 29, 72, 0.25);
+  background: rgba(12, 16, 24, 0.98) !important;
 }
 
 .service-num {
