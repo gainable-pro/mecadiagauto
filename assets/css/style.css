@@ -173,9 +173,10 @@ a {
 }
 
 .nav-brand img {
-  height: 48px;
+  height: 62px;
   width: auto;
   display: block;
+  border-radius: 6px;
 }
 
 .nav-links {
@@ -2066,7 +2067,6 @@ a {
   width: 100%;
   margin-bottom: 28px;
   filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 35px rgba(225, 29, 72, 0.25));
-  animation: introLogoReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes introLogoReveal {
