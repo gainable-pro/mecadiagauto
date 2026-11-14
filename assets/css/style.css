@@ -1893,7 +1893,7 @@ a {
   position: relative;
   padding: 85px 24px 60px;
   background: linear-gradient(180deg, rgba(5,6,8,0.74) 0%, rgba(5,6,8,0.92) 100%),
-              url('https://images.unsplash.com/photo-1560846389-8c7e1d88eca8?auto=format&fit=crop&w=1920&q=85') center 40% / cover no-repeat;
+              url('../images/precision-soldering-hands.jpg') center 40% / cover no-repeat;
   border-bottom: 1px solid rgba(255,255,255,0.1);
   text-align: center;
 }
