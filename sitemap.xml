@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Pages Principales -->
+  <!-- Pages Principales (Clean URLs) -->
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/</loc>
+    <loc>https://www.mecadiagsoftauto.fr</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/reprogrammation.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/reprogrammation</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/ethanol-e85.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/ethanol-e85</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/electronique-calculateurs.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/electronique-calculateurs</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/adblue-fap-diag.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/adblue-fap-diag</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/secteur-miramas-100km.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/secteur-miramas-100km</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/contact-devis.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/contact-devis</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -46,31 +46,31 @@
 
   <!-- Hub Guides & Nouveaux Articles SEO Haute Intention -->
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/guides-techniques.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/guides-techniques</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/diagnostic-automobile-recherche-panne.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/diagnostic-automobile-recherche-panne</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/code-erreur-voyant-moteur-solutions.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/code-erreur-voyant-moteur-solutions</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/programmation-moteur-gain-puissance-stage-1.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/programmation-moteur-gain-puissance-stage-1</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/defaut-electrique-reparation-calculateur-auto.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/defaut-electrique-reparation-calculateur-auto</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -78,73 +78,73 @@
 
   <!-- Référencement Local Villes (Rayon 100 km) -->
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/salon-de-provence.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/salon-de-provence</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/istres.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/istres</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/aix-en-provence.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/aix-en-provence</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/marseille.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/marseille</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/arles.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/arles</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/avignon.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/avignon</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/martigues.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/martigues</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/fos-sur-mer.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/fos-sur-mer</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/nimes.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/nimes</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/vitrolles.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/vitrolles</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/marignane.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/marignane</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/cavaillon.html</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/cavaillon</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
