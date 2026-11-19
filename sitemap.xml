@@ -76,39 +76,39 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Référencement Local Villes (Rayon 100 km) -->
+  <!-- Référencement Local Villes (Rayon 100 km) - 20 Villes Stratégiques -->
+  <url>
+    <loc>https://www.mecadiagsoftauto.fr/villes/saint-chamas</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.mecadiagsoftauto.fr/villes/saint-martin-de-crau</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
   <url>
     <loc>https://www.mecadiagsoftauto.fr/villes/salon-de-provence</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.mecadiagsoftauto.fr/villes/istres</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/aix-en-provence</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/fos-sur-mer</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/marseille</loc>
-    <lastmod>2026-11-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/arles</loc>
-    <lastmod>2026-11-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/avignon</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/port-de-bouc</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -120,13 +120,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/fos-sur-mer</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/berre-letang</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/nimes</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/cavaillon</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mecadiagsoftauto.fr/villes/saint-remy-de-provence</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mecadiagsoftauto.fr/villes/chateaurenard</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -144,7 +156,43 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mecadiagsoftauto.fr/villes/cavaillon</loc>
+    <loc>https://www.mecadiagsoftauto.fr/villes/arles</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mecadiagsoftauto.fr/villes/aix-en-provence</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mecadiagsoftauto.fr/villes/avignon</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mecadiagsoftauto.fr/villes/marseille</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mecadiagsoftauto.fr/villes/nimes</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mecadiagsoftauto.fr/villes/orange</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mecadiagsoftauto.fr/villes/aubagne</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
