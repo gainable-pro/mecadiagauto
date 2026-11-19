@@ -75,6 +75,17 @@
         <form id="quick-quote-form" style="display:flex; flex-direction:column; gap: 18px;">
           <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 16px;">
             <div>
+              <label for="quote-name" style="display:block; font-size:0.85rem; font-weight:700; margin-bottom:6px; color:var(--text-muted);">VOTRE NOM &amp; PRÉNOM</label>
+              <input type="text" id="quote-name" class="form-input" placeholder="ex: Jean Dupont" required>
+            </div>
+            <div>
+              <label for="quote-email" style="display:block; font-size:0.85rem; font-weight:700; margin-bottom:6px; color:var(--text-muted);">VOTRE ADRESSE EMAIL</label>
+              <input type="email" id="quote-email" class="form-input" placeholder="jean.dupont@email.com" required>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div>
               <label for="quote-brand" style="display:block; font-size:0.85rem; font-weight:700; margin-bottom:6px; color:var(--text-muted);">MARQUE DU VÉHICULE</label>
               <input type="text" id="quote-brand" class="form-input" placeholder="ex: Audi, BMW, Volkswagen..." required>
             </div>
@@ -111,9 +122,18 @@
             <textarea id="quote-notes" class="form-input" rows="4" placeholder="Précisez votre demande, les voyants allumés au tableau de bord, boîte auto ou manuelle..."></textarea>
           </div>
 
-          <button type="submit" class="btn-devis-red" style="width:100%; justify-content:center; padding:18px;">
-            ⚡ ENVOYER MA DEMANDE (WHATSAPP / DIRECT)
+          <div id="quote-status" style="display:none; padding:14px; border-radius:var(--radius-md); font-weight:700; font-size:0.95rem; text-align:center;"></div>
+
+          <button type="submit" id="quote-submit-btn" class="btn-devis-red" style="width:100%; justify-content:center; padding:18px; border:none; cursor:pointer; font-size:1rem;">
+            ⚡ ENVOYER MA DEMANDE DE DEVIS
           </button>
+
+          <div style="text-align:center; margin-top:8px;">
+            <span style="color:var(--text-dim); font-size:0.85rem;">Vous préférez un échange immédiat par messagerie ?</span><br>
+            <a id="btn-whatsapp-direct" href="https://wa.me/33650624972?text=Bonjour%20MECADIAG%20AUTO%2C%20je%20souhaite%20un%20devis." target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; color:#25D366; font-weight:700; text-decoration:none; margin-top:6px; font-size:0.9rem;">
+              💬 Ouvrir directement sur WhatsApp →
+            </a>
+          </div>
         </form>
       </div>
 

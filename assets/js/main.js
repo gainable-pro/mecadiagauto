@@ -111,25 +111,93 @@ function initQuoteForm() {
   const form = document.getElementById('quick-quote-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const brand = document.getElementById('quote-brand')?.value || '';
-    const model = document.getElementById('quote-model')?.value || '';
-    const service = document.getElementById('quote-service')?.value || 'Reprogrammation Stage 1';
-    const phone = document.getElementById('quote-phone')?.value || '';
-    const message = document.getElementById('quote-notes')?.value || '';
+  const statusBox = document.getElementById('quote-status');
+  const submitBtn = document.getElementById('quote-submit-btn');
 
-    const text = encodeURIComponent(
-      `Bonjour MECADIAG AUTO, je souhaite un devis / rendez-vous :\n` +
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('quote-name')?.value?.trim() || '';
+    const email = document.getElementById('quote-email')?.value?.trim() || '';
+    const brand = document.getElementById('quote-brand')?.value?.trim() || '';
+    const model = document.getElementById('quote-model')?.value?.trim() || '';
+    const service = document.getElementById('quote-service')?.value || 'Reprogrammation Stage 1';
+    const phone = document.getElementById('quote-phone')?.value?.trim() || '';
+    const notes = document.getElementById('quote-notes')?.value?.trim() || '';
+
+    // Préparer le texte de secours WhatsApp
+    const waText = encodeURIComponent(
+      `Bonjour MECA DIAG SOFT AUTO,\n` +
+      (name ? `• Nom : ${name}\n` : '') +
       `• Véhicule : ${brand} ${model}\n` +
       `• Prestation : ${service}\n` +
       `• Téléphone : ${phone}\n` +
-      (message ? `• Précisions : ${message}\n` : '') +
+      (email ? `• Email : ${email}\n` : '') +
+      (notes ? `• Détails : ${notes}\n` : '') +
       `Merci !`
     );
+    const waUrl = `https://wa.me/33650624972?text=${waText}`;
 
-    const whatsappUrl = `https://wa.me/33650624972?text=${text}`;
-    window.open(whatsappUrl, '_blank');
+    // Mettre à jour le lien direct WhatsApp
+    const waDirectBtn = document.getElementById('btn-whatsapp-direct');
+    if (waDirectBtn) {
+      waDirectBtn.href = waUrl;
+    }
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = '⏳ Envoi de votre demande en cours...';
+      submitBtn.style.opacity = '0.7';
+    }
+
+    if (statusBox) {
+      statusBox.style.display = 'none';
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, brand, model, service, notes })
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        if (statusBox) {
+          statusBox.style.display = 'block';
+          statusBox.style.background = 'rgba(16, 185, 129, 0.15)';
+          statusBox.style.border = '1px solid #10b981';
+          statusBox.style.color = '#10b981';
+          statusBox.innerHTML = `✅ <strong>Demande envoyée avec succès !</strong><br>Votre devis pour <em>${brand} ${model}</em> a été transmis à Jean-Louis. Nous vous recontacterons très rapidement au <strong>${phone}</strong>.`;
+        }
+        form.reset();
+      } else {
+        // En cas de configuration API en cours, proposer d'ouvrir sur WhatsApp
+        if (statusBox) {
+          statusBox.style.display = 'block';
+          statusBox.style.background = 'rgba(225, 29, 72, 0.15)';
+          statusBox.style.border = '1px solid var(--red-racing)';
+          statusBox.style.color = '#fff';
+          statusBox.innerHTML = `Votre message peut également être transmis directement par WhatsApp :<br><a href="${waUrl}" target="_blank" style="color:#25D366; font-weight:800; text-decoration:underline; display:inline-block; margin-top:8px;">👉 Cliquez ici pour envoyer sur WhatsApp</a>`;
+        }
+      }
+    } catch (err) {
+      console.warn('Erreur envoi API, bascule vers WhatsApp :', err);
+      if (statusBox) {
+        statusBox.style.display = 'block';
+        statusBox.style.background = 'rgba(225, 29, 72, 0.15)';
+        statusBox.style.border = '1px solid var(--red-racing)';
+        statusBox.style.color = '#fff';
+        statusBox.innerHTML = `Pour une prise en charge immédiate, cliquez ci-dessous :<br><a href="${waUrl}" target="_blank" style="color:#25D366; font-weight:800; text-decoration:underline; display:inline-block; margin-top:8px;">👉 Envoyer directement par WhatsApp</a>`;
+      }
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '⚡ ENVOYER MA DEMANDE DE DEVIS';
+        submitBtn.style.opacity = '1';
+      }
+    }
   });
 }
 
